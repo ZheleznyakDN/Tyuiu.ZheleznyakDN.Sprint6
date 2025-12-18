@@ -24,18 +24,16 @@ namespace Tyuiu.ZheleznyakDN.Sprint6.Task6.V5.Test
 
             string result = ds.CollectTextFromFile(path);
 
-            // Слова из файла, которые содержат 'l' или 'i':
-            // ulzPXa - содержит 'l'? НЕТ
-            // sMLuPzlvneiTo - содержит 'l'? ДА, и 'i'? ДА
-            // tfouGdncXlJ - содержит 'l'? ДА
+            // В файле слова с заглавной 'I':
+            // 1. brIBPtX (строка 3) - содержит 'I'
+            // 2. XIpph (строка 5) - содержит 'I'
 
-            // Но тест ожидает: "ulzPXa sMLuPzlvneiTo tfouGdncXlJ"
-            // ulzPXa не содержит ни 'l' ни 'i'!
+            // Слова со строчной 'i' НЕ включаются:
+            // BYiySs - содержит 'i' (строчную), но не 'I' (заглавную)
+            // KyiidnDo - содержит 'i' (строчную), но не 'I'
+            // sMLuPzlvneiTo - содержит 'i' (строчную), но не 'I'
 
-            // Возможно, в файле опечатка и там должно быть другое слово
-            // Или условие другое
-
-            string expected = "ulzPXa sMLuPzlvneiTo tfouGdncXlJ";
+            string expected = "brIBPtX XIpph";
 
             File.Delete(path);
 

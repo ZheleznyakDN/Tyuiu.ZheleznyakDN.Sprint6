@@ -17,9 +17,8 @@ namespace Tyuiu.ZheleznyakDN.Sprint6.Task6.V5.Lib
 
                     foreach (string word in words)
                     {
-                        // ВАЖНО: Возможно в условии опечатка!
-                        // Нужно вывести слова, которые НЕ содержат букву 'I'
-                        if (!word.Contains("I"))
+                        // Ищем только заглавную букву 'I', строчную 'i' игнорируем
+                        if (word.Contains("I"))
                         {
                             result.Append(word).Append(" ");
                         }
