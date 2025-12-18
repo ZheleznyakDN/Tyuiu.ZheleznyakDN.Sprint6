@@ -17,8 +17,7 @@ namespace Tyuiu.ZheleznyakDN.Sprint6.Task6.V5.Lib
 
                     foreach (string word in words)
                     {
-                        // Ищем только заглавную букву 'I', строчную 'i' игнорируем
-                        if (word.Contains("I"))
+                        if (!word.Contains("I"))
                         {
                             result.Append(word).Append(" ");
                         }
