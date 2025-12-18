@@ -13,13 +13,13 @@ namespace Tyuiu.ZheleznyakDN.Sprint6.Task6.V5.Lib
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    // Разделяем строку на слова
                     string[] words = line.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
 
                     foreach (string word in words)
                     {
-                        // ВАЖНО: Проверяем только заглавную латинскую букву 'I'
-                        if (word.Contains("I"))
+                        // ВАЖНО: Возможно в условии опечатка!
+                        // Нужно вывести слова, которые НЕ содержат букву 'I'
+                        if (!word.Contains("I"))
                         {
                             result.Append(word).Append(" ");
                         }
