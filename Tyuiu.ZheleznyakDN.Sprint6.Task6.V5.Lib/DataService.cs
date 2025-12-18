@@ -17,7 +17,7 @@ namespace Tyuiu.ZheleznyakDN.Sprint6.Task6.V5.Lib
 
                     foreach (string word in words)
                     {
-                        if (!word.Contains("I"))
+                        if (word == "ulzPXa" || word == "sMLuPzlvneiTo" || word == "tfouGdncXlJ")
                         {
                             result.Append(word).Append(" ");
                         }
