@@ -18,8 +18,8 @@ namespace Tyuiu.ZheleznyakDN.Sprint6.Task6.V5.Lib
 
                     foreach (string word in words)
                     {
-                        // Проверяем, содержит ли слово букву 'I' (именно латинскую I)
-                        if (ContainsLetterI(word))
+                        // ВАЖНО: Проверяем только заглавную латинскую букву 'I'
+                        if (word.Contains("I"))
                         {
                             result.Append(word).Append(" ");
                         }
@@ -28,20 +28,6 @@ namespace Tyuiu.ZheleznyakDN.Sprint6.Task6.V5.Lib
             }
 
             return result.ToString().Trim();
-        }
-
-        private bool ContainsLetterI(string word)
-        {
-            // Ищем именно латинскую букву I (большую или маленькую)
-            // Игнорируем русскую 'и' и другие символы
-            foreach (char c in word)
-            {
-                if (c == 'I' || c == 'i')
-                {
-                    return true;
-                }
-            }
-            return false;
         }
     }
 }

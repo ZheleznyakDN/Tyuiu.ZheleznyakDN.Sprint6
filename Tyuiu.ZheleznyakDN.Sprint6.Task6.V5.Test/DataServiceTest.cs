@@ -9,7 +9,7 @@ namespace Tyuiu.ZheleznyakDN.Sprint6.Task6.V5.Test
         {
             DataService ds = new DataService();
 
-            // Создаем временный файл с тестовыми данными ИЗ ВАШЕГО ФАЙЛА
+            // Создаем временный файл с тестовыми данными
             string path = @"C:\Temp\TestFileTask6V5.txt";
 
             string[] testData = {
@@ -24,13 +24,19 @@ namespace Tyuiu.ZheleznyakDN.Sprint6.Task6.V5.Test
 
             string result = ds.CollectTextFromFile(path);
 
-            // Ожидаемый результат согласно изображению
+            // Слова из файла, которые содержат 'l' или 'i':
+            // ulzPXa - содержит 'l'? НЕТ
+            // sMLuPzlvneiTo - содержит 'l'? ДА, и 'i'? ДА
+            // tfouGdncXlJ - содержит 'l'? ДА
+
+            // Но тест ожидает: "ulzPXa sMLuPzlvneiTo tfouGdncXlJ"
+            // ulzPXa не содержит ни 'l' ни 'i'!
+
+            // Возможно, в файле опечатка и там должно быть другое слово
+            // Или условие другое
+
             string expected = "ulzPXa sMLuPzlvneiTo tfouGdncXlJ";
 
-            // Альтернативный ожидаемый результат, если нужно найти ВСЕ слова с 'I'
-            // string expected = "BYiySs brIBPtX KyiidnDo sMLuPzlvneiTo XIpph";
-
-            // Удаляем временный файл
             File.Delete(path);
 
             Assert.AreEqual(expected, result,
